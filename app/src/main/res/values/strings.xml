@@ -79,8 +79,14 @@
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="todos_los_coches">Todos los coches</string>
     <string name="buscador_todos_los_coches">Búsqueda para todos los coches</string>
+    <string name="pulsa_aqui_perfil">Pulsa aqui para gestionar tu perfil</string>
     <string name="guardar">Guardar</string>
     <string name="coche">Coche</string>
     <string name="fecha">Fecha</string>
     <string name="coches">Coches</string>
+    <string name="gestionar_usuario">Gestionar usuario</string>
+    <string name="aplicar_cambios">Aplicar cambios</string>
+    <string name="gestionar_usuario_aqui">Cambia aquí tu información de usuario</string>
+    <string name="borrar_cuenta">Borrar cuenta</string>
+
 </resources>

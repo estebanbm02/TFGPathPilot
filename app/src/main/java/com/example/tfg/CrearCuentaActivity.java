@@ -68,6 +68,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
             Log.e(TAG, "El botón con ID 'buttonCrearCuenta' no se encontró en el layout.");
         }
     }
+
     private void openHomeActivity(Usuario usuario) {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra("usuario_logeado", usuario);

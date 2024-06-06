@@ -51,6 +51,7 @@
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".MantenimientosActivity" />
         <activity android:name=".AlquilerActivity" />
+        <activity android:name=".GestionarUsuarioActivity" />
 
     </application>
 

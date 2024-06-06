@@ -115,6 +115,19 @@ public class UsuarioDAO {
         }
     }
 
+    public boolean actualizarUsuario(Usuario usuario) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("email", usuario.getEmail());
+        values.put("nombre", usuario.getNombre());
+        values.put("ubicacion", usuario.getUbicacion());
+
+        int rows = db.update("usuario", values, "id_usuario = ?", new String[]{String.valueOf(usuario.getId())});
+        db.close();
+
+        return rows > 0;
+    }
+
     @SuppressLint("Range")
     private Usuario crearUsuarioDesdeCursor(Cursor cursor) {
         Usuario usuario = new Usuario();

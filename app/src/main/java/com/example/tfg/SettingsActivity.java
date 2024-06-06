@@ -29,7 +29,7 @@ public class SettingsActivity extends ToolbarActivity {
         findViewById(R.id.arrowButtonContactanos).setOnClickListener(v -> openContactanosActivity());
         findViewById(R.id.arrowButtonTema).setOnClickListener(v -> openTemaActivity());
         findViewById(R.id.arrowButtonNotificaciones).setOnClickListener(v -> openNotificacionesActivity());
-        findViewById(R.id.arrowButtonCerrarSesion).setOnClickListener(v -> mostrarDialogoCerrarSesion());
+        findViewById(R.id.arrowButtonGestionarUsuario).setOnClickListener(v -> openGestionarUsuarioActivity());
     }
 
     private void openAcercaDeActivity() {
@@ -58,6 +58,12 @@ public class SettingsActivity extends ToolbarActivity {
 
     private void openNotificacionesActivity() {
         Intent intent = new Intent(this, NotificacionesActivity.class);
+        intent.putExtra("usuario_logeado", this.usuario);
+        startActivity(intent);
+    }
+
+    private void openGestionarUsuarioActivity(){
+        Intent intent = new Intent(this, GestionarUsuarioActivity.class);
         intent.putExtra("usuario_logeado", this.usuario);
         startActivity(intent);
     }

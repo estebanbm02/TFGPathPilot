@@ -95,6 +95,7 @@
         android:id="@+id/buttonSeguir"
         android:layout_width="312dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#006BB8"
         android:text="@string/siguenos_ahora"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

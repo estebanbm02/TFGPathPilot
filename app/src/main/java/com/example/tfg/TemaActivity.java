@@ -50,19 +50,11 @@ public class TemaActivity extends ToolbarActivity {
         switchModoOscuro.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (!isSwitchUpdating) {
                 guardarModoOscuro(isChecked);
-                mostrarMensaje("Modo Oscuro " + (isChecked ? "Activado" : "Desactivado"));
             }
         });
 
-        switchBrilloAutomatico.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            activarBrilloAutomatico(isChecked);
-        });
     }
 
-    private void activarBrilloAutomatico(boolean activar) {
-        mostrarMensaje("Brillo Automático " + (activar ? "Activado" : "Desactivado"));
-        // Implementación depende de los permisos y capacidad del dispositivo
-    }
 
     private void cargarConfiguraciones() {
         boolean modoOscuro = sharedPreferences.getBoolean("modoOscuro", false);
@@ -88,11 +80,6 @@ public class TemaActivity extends ToolbarActivity {
         editor.putBoolean("modoOscuro", switchModoOscuro.isChecked());
         editor.putBoolean("brilloAutomatico", switchBrilloAutomatico.isChecked());
         editor.apply();
-        mostrarMensaje("Configuraciones guardadas");
-    }
-
-    private void mostrarMensaje(String mensaje) {
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
     }
 
     private void initializeButton() {

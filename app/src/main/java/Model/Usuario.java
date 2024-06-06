@@ -6,6 +6,7 @@ public class Usuario implements Serializable {
     private int id;
     private String nombre;
     private String email;
+    public String contrasenia;
     private String telefono;
     private String direccion;
     private String ubicacion;
@@ -60,5 +61,13 @@ public class Usuario implements Serializable {
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 }

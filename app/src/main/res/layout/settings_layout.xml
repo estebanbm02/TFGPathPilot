@@ -305,7 +305,7 @@
         app:layout_constraintVertical_bias="0.655" />
 
     <ImageButton
-        android:id="@+id/arrowButtonCerrarSesion"
+        android:id="@+id/arrowButtonGestionarUsuario"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:backgroundTint="?android:attr/windowSplashScreenIconBackgroundColor"
@@ -322,7 +322,7 @@
         android:id="@+id/textViewDescripcionCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pulsa_cerrar_sesion"
+        android:text="@string/pulsa_aqui_perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.121"
@@ -334,7 +334,7 @@
         android:id="@+id/textViewTituloCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cerrar_sesion"
+        android:text="@string/gestionar_usuario"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
