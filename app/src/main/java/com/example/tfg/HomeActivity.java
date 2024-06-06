@@ -53,11 +53,11 @@ public class HomeActivity extends ToolbarActivity{
     }
 
     private void displayCloseCars(String ubicacion) {
-        List<Coche> eventosValorados = cocheDAO.buscarCochesPorUbicacion(ubicacion);
-        if (eventosValorados.isEmpty()) {
-            eventosValorados = new ArrayList<>();
+        List<Coche> cochesValorados = cocheDAO.buscarCochesPorUbicacion(ubicacion);
+        if (cochesValorados.isEmpty()) {
+            cochesValorados = new ArrayList<>();
         }
-        updateRecyclerView(eventosValorados);
+        updateRecyclerView(cochesValorados);
     }
     private void setupRecyclerView() {
         recyclerView = findViewById(R.id.recyclerViewShow);

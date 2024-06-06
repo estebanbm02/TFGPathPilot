@@ -78,43 +78,39 @@ public class UsuarioDAO {
         return usuario;
     }
 
-    public Usuario crearCuenta(String correo, String contrasenia, String nombre, String ubicacion) {
-        Usuario usuarioExiste = null;
+    public boolean verificarSiUsuarioExiste(String correo) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query("usuario",
-                new String[]{"id_usuario", "nombre", "email", "telefono", "direccion", "ubicacion"},
+                new String[]{"id_usuario"},
                 "email = ?",
                 new String[]{correo},
                 null, null, null);
 
+        boolean existe = cursor != null && cursor.moveToFirst();
+
         if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                usuarioExiste = crearUsuarioDesdeCursor(cursor);
-                cursor.close();
-                db.close();
-                return usuarioExiste;
-            }
             cursor.close();
         }
-
         db.close();
 
-        try (SQLiteDatabase dbWritable = dbHelper.getWritableDatabase()) {
-            ContentValues values = new ContentValues();
-            values.put("nombre", nombre);
-            values.put("email", correo);
-            values.put("contrasena", getMD5Hash(contrasenia));
-            values.put("ubicacion", ubicacion);
+        return existe;
+    }
 
-            long id = dbWritable.insertOrThrow("usuario", null, values);
-            if (id != -1) {
-                return obtenerUsuarioPorId(id);
-            } else {
-                Log.e(TAG, "Error al crear el usuario");
-                return null;
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error al crear la cuenta", e);
+    public Usuario crearCuenta(String correo, String contrasenia, String nombre, String ubicacion) {
+        SQLiteDatabase dbWritable = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("nombre", nombre);
+        values.put("email", correo);
+        values.put("contrasena", getMD5Hash(contrasenia));
+        values.put("ubicacion", ubicacion);
+
+        long id = dbWritable.insertOrThrow("usuario", null, values);
+        dbWritable.close();
+
+        if (id != -1) {
+            return obtenerUsuarioPorId(id);
+        } else {
+            Log.e(TAG, "Error al crear el usuario");
             return null;
         }
     }

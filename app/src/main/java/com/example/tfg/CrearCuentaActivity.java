@@ -51,18 +51,16 @@ public class CrearCuentaActivity extends AppCompatActivity {
                     return;
                 }
 
-                Usuario usuarioExiste = usuarioDAO.crearCuenta(correo, contrasenia, nombre, ubicacion);
+                boolean usuarioExiste = usuarioDAO.verificarSiUsuarioExiste(correo);
 
-                if (usuarioExiste == null) {
-                    // El usuario no existía y fue creado exitosamente
-                    Usuario nuevoUsuario = usuarioDAO.login(correo, contrasenia);
+                if (!usuarioExiste) {
+                    Usuario nuevoUsuario = usuarioDAO.crearCuenta(correo, contrasenia, nombre, ubicacion);
                     if (nuevoUsuario != null) {
                         openHomeActivity(nuevoUsuario);
                     } else {
                         Toast.makeText(CrearCuentaActivity.this, "Error al crear la cuenta", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    // El usuario ya existe
                     Toast.makeText(CrearCuentaActivity.this, "El correo ya está registrado", Toast.LENGTH_SHORT).show();
                 }
             });
