@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540744674326",
+    "project_id": "pathpilot-93de6",
+    "storage_bucket": "pathpilot-93de6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540744674326:android:e1ed3e49693d9318329937",
+        "android_client_info": {
+          "package_name": "com.example.tfg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrB5noedOMw-x2Ms0snSBquA0cHEF6Guc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

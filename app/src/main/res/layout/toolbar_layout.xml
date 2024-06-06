@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageRoundBack"
+        android:layout_width="105dp"
+        android:layout_height="93dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/roundBack_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/round" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#f2f2f2"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    <ImageButton
+        android:id="@+id/imageButtonHome"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#f2f2f2"
+        android:contentDescription="@string/btnInicio_desc"
+        android:translationX="-16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_home" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCar"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#f2f2f2"
+            android:contentDescription="@string/btnCar_desc"
+            android:translationX="-7.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonHome"
+            app:srcCompat="@drawable/ic_car" />
+
+        <ImageButton
+            android:id="@+id/imageButtonShop"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#f2f2f2"
+            android:contentDescription="@string/btnShop_desc"
+            android:src="@drawable/ic_cart"
+            android:translationX="107.5dp"
+            tools:layout_editor_absoluteX="261dp"
+            tools:layout_editor_absoluteY="658dp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonProfile"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#f2f2f2"
+            android:contentDescription="@string/btnProfile_desc"
+            android:translationX="115dp"
+            app:srcCompat="@drawable/ic_profile"
+            tools:layout_editor_absoluteX="334dp"
+            tools:layout_editor_absoluteY="658dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageButton
+        android:id="@+id/imageButtonAñadir"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        android:clickable="true"
+        android:contentDescription="@string/btnAddCar_desc"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99" />
+</androidx.constraintlayout.widget.ConstraintLayout>
