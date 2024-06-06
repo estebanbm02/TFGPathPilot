@@ -7,7 +7,6 @@ import android.widget.ImageButton;
 
 public class AcercaDeActivity extends ToolbarActivity {
     private static final String TAG = "AcercaDeActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

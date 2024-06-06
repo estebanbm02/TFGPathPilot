@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class SiguenosActivity extends ToolbarActivity{
+    private static final String TAG = "SiguenosActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,15 +19,6 @@ public class SiguenosActivity extends ToolbarActivity{
         setToolbarOnClicks();
         initializeButton();
 
-        // Botón para volver a la pantalla de configuraciones
-        ImageButton buttonBack = findViewById(R.id.buttonBackRedes);
-        if (buttonBack != null) {
-            buttonBack.setOnClickListener(v -> startActivity(new Intent(SiguenosActivity.this, SettingsActivity.class)));
-        } else {
-            Log.e("SiguenosActivity", "buttonBack no encontrado.");
-        }
-
-        // Botón para seguir en Twitter
         Button openTwitterBtn = findViewById(R.id.buttonSeguir);
         if (openTwitterBtn != null) {
             openTwitterBtn.setOnClickListener(view -> {

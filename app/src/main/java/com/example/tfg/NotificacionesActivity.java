@@ -106,6 +106,7 @@ public class NotificacionesActivity extends ToolbarActivity {
 
     private void openSettingsActivity() {
         Intent intent = new Intent(NotificacionesActivity.this, SettingsActivity.class);
+        intent.putExtra("usuario_logeado", this.usuario);
         startActivity(intent);
     }
 }
