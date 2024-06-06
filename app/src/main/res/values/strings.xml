@@ -4,7 +4,7 @@
     <string name="white_logo_description">Descripción del logotipo blanco</string>
     <string name="roundBack_desc">RoundBack</string>
     <string name="btnInicio_desc">Inicio</string>
-    <string name="btnCar_desc">Vehiculos</string>
+    <string name="btnCar_desc">Vehículos</string>
     <string name="btnShop_desc">Tienda</string>
     <string name="btnProfile_desc">Perfil</string>
     <string name="btnAddCar_desc">Nuevo coche</string>
@@ -48,7 +48,7 @@
     <string name="modelo">Modelo</string>
     <string name="tipo">Tipo</string>
     <string name="caballos">Caballos</string>
-    <string name="ubicacion">Ubicacion</string>
+    <string name="ubicacion">Ubicación</string>
     <string name="precio">Precio</string>
     <string name="dejanos_tu_mensaje">Déjanos tu mensaje.</string>
     <string name="cancelar">Cancelar</string>
@@ -56,8 +56,9 @@
     <string name="informacion">Información</string>
     <string name="volver_a_inicio">Volver al inicio</string>
     <string name="tema">Tema</string>
+    <string name="accesibilidad">Accesibilidad</string>
     <string name="contrasena">Contraseña</string>
-    <string name="articulos">Articulos</string>
+    <string name="articulos">Artículos</string>
     <string name="aplicar">Aplicar</string>
     <string name="cambia_el_tema">Cambia el tema de la apliación</string>
     <string name="desc_tema_oscuro">Activa el modo oscuro para reducir la fatiga ocular y mejorar la legibilidad en entornos con poca luz.</string>

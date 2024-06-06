@@ -4,7 +4,9 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,14 +16,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class TemaActivity extends ToolbarActivity {
-    private Switch switchModoOscuro, switchBrilloAutomatico;
+    private Switch switchModoOscuro;
     private static final String PREFS_NAME = "TemaPrefs";
     private SharedPreferences sharedPreferences;
-    private boolean isSwitchUpdating = false;  // Variable para evitar bucle
+    private boolean isSwitchUpdating = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Inicializar SharedPreferences y aplicar configuración de modo oscuro
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean modoOscuro = sharedPreferences.getBoolean("modoOscuro", false);
         AppCompatDelegate.setDefaultNightMode(modoOscuro ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
@@ -32,18 +33,15 @@ public class TemaActivity extends ToolbarActivity {
         initializeButton();
 
         inicializarComponentesUI();
-        cargarConfiguraciones();  // Cargar las configuraciones almacenadas
+        cargarConfiguraciones();
         configurarListeners();
     }
 
     private void inicializarComponentesUI() {
         switchModoOscuro = findViewById(R.id.switchTemaOscuro);
-        switchBrilloAutomatico = findViewById(R.id.switchBrilloAutomatico);
-        Button botonGuardar = findViewById(R.id.buttonGuardar);
         ImageButton buttonBack = findViewById(R.id.buttonBackTema);
 
         buttonBack.setOnClickListener(v -> finish());
-        botonGuardar.setOnClickListener(v -> guardarConfiguraciones());
     }
 
     private void configurarListeners() {
@@ -52,17 +50,13 @@ public class TemaActivity extends ToolbarActivity {
                 guardarModoOscuro(isChecked);
             }
         });
-
     }
-
-
     private void cargarConfiguraciones() {
         boolean modoOscuro = sharedPreferences.getBoolean("modoOscuro", false);
         boolean brilloAutomatico = sharedPreferences.getBoolean("brilloAutomatico", false);
 
-        isSwitchUpdating = true;  // Prevenir bucles
+        isSwitchUpdating = true;
         switchModoOscuro.setChecked(modoOscuro);
-        switchBrilloAutomatico.setChecked(brilloAutomatico);
         isSwitchUpdating = false;
     }
 
@@ -71,16 +65,15 @@ public class TemaActivity extends ToolbarActivity {
         editor.putBoolean("modoOscuro", modoOscuro);
         editor.apply();
 
-        // Aplicar el modo oscuro
         AppCompatDelegate.setDefaultNightMode(modoOscuro ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
     }
 
     private void guardarConfiguraciones() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("modoOscuro", switchModoOscuro.isChecked());
-        editor.putBoolean("brilloAutomatico", switchBrilloAutomatico.isChecked());
         editor.apply();
     }
+
 
     private void initializeButton() {
         ImageButton button2 = findViewById(R.id.buttonBackTema);

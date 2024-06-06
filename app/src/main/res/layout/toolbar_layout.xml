@@ -74,7 +74,7 @@
             android:backgroundTint="#f2f2f2"
             android:contentDescription="@string/btnProfile_desc"
             android:translationX="115dp"
-            app:srcCompat="@drawable/ic_profile"
+            app:srcCompat="@drawable/ic_settings"
             tools:layout_editor_absoluteX="334dp"
             tools:layout_editor_absoluteY="658dp" />
 
