@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="336dp"
+        android:layout_height="28dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/buscador_todos_los_coches"
+        android:textAlignment="center"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
 
     <View
         android:id="@+id/colorStripTop"
@@ -36,21 +53,21 @@
         android:id="@+id/searchViewTusCoches"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/item_buscador"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colorStripTop">
-    </androidx.appcompat.widget.SearchView>
+        app:layout_constraintTop_toBottomOf="@+id/colorStripTop"></androidx.appcompat.widget.SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="387dp"
-        android:layout_height="620dp"
+        android:layout_width="383dp"
+        android:layout_height="536dp"
         android:contentDescription="@string/item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchViewTusCoches"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.261" />
 
     <include
         android:id="@+id/include2"

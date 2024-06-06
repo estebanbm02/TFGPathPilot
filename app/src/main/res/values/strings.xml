@@ -78,6 +78,7 @@
     <string name="introduce_tipo">Introduce el tipo</string>
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="todos_los_coches">Todos los coches</string>
+    <string name="buscador_todos_los_coches">Búsqueda para todos los coches</string>
     <string name="guardar">Guardar</string>
     <string name="coche">Coche</string>
     <string name="fecha">Fecha</string>
